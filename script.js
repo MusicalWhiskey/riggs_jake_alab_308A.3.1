@@ -13,7 +13,7 @@ async function getUserData(id) {
   try {
     const dbPicker = await central(id);
     if (!dbs[dbPicker]) {
-      return Promise.reject(Error(`${dbPicker} not available`));
+      return Promise.reject(Error(`${dbPicker} is not available`));
     }
     //Promise All
     const [data, vaultContents] = await Promise.all([dbs[dbPicker](id), vault(id)]);
