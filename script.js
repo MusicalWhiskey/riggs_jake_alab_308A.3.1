@@ -20,9 +20,34 @@ async function getUserData(id) {
     const dataObject = { id, ...data, ...vaultContents };
     console.log(dataObject);
 
-    //Catch
+    //Catch 
   } catch (error) {
     return Promise.reject(error);
   }
 }
-getUserData(10);
+
+//(if then's instead)
+
+// function getUserData(id) {
+//   const dbs = {
+//     db1: db1,
+//     db2: db2,
+//     db3: db3,
+//   };
+
+//   return central(id).then((dbPicker) => {
+//     if (!dbs[dbPicker]) {
+//       return Promise.reject(new Error(`${dbPicker} is not available`));
+//     }
+//     return Promise.all([dbs[dbPicker](id), vault(id)]);
+//   }).then(([data, vaultContents]) => {
+//     const dataObject = { id, ...data, ...vaultContents };
+//     console.log(dataObject);
+//     return dataObject;
+//   }).catch((error) => {
+//     return Promise.reject(error);
+//   });
+// }
+
+
+getUserData(5);
